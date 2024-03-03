@@ -1,0 +1,126 @@
+.note-container{
+    margin-bottom: 10px;
+    border: 1px solid rgba(0, 128, 0, 0.257);
+    border-radius: 8px;
+    width:100%;
+
+    overflow-wrap: break-word;
+    overflow-y: auto;
+    
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 10px;
+}
+
+
+.note-header-container{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    box-sizing: border-box;
+}
+.note-tags{
+    display: flex;
+    flex-direction: row;
+}
+.note-tag{
+    background-color: rgba(0, 128, 0, 0.459);
+    color: black;
+    padding: 6px 10px;
+    margin-right: 5px;
+    border-radius: 8px;
+    font-size: 10px;
+    cursor: pointer;
+}
+
+.note-tag:hover{
+    background-color: rgba(0, 128, 0, 0.772);
+}
+
+
+
+.note-buttons{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.note-btn{
+    
+    /* background-color: red; */
+    margin-left: 15px;
+    color: green;
+}
+.note-btn img{
+    width: 18px;
+}
+.note-btn:hover{
+    
+    cursor: pointer;
+}
+
+
+.note-titleContainer{
+    padding-left: 10px;
+}
+.note-title{
+    font-size: 25px;
+    font-weight: 700;
+}
+
+
+.note-bodyContainer{
+    padding-left: 10px;
+    padding-right: 10px;
+    max-height: 500px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+
+
+.note-container-FS{
+    max-width:90%;
+    background-color: white;
+    max-height: 85vh;
+    display: flex;
+    flex-direction: column;
+    margin-top: 5px;
+    border-radius: 8px;
+
+    min-width: 400px;
+    min-height: 300px;
+}
+
+
+.note-bodyContainer-FS{
+    padding-left: 10px;
+    padding-right: 10px;
+    flex: 1;
+    overflow-wrap: break-word;
+    overflow-y: auto;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 7px;
+}
+
+  /* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: rgba(0, 128, 0, 0.582); 
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 128, 0, 0.712); 
+}

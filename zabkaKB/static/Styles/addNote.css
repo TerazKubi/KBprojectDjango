@@ -1,0 +1,116 @@
+.editor-container{
+    width:90%;
+    background-color: white;
+    height: 85vh;
+    display: flex;
+    flex-direction: column;
+    margin-top: 5px;
+}
+
+/* =========== Title ====================================================== */
+.titleInputContainer{
+    width: 100%;
+    padding: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+
+    /* border: 1px solid red; */
+    box-sizing: border-box; 
+}
+.inputTitle{
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 5px 5px 5px 10px;
+    font-size: 20px;
+    background-color: rgb(185, 185, 185);
+    border-radius: 8px;
+}
+.inputTitle::placeholder{
+    color: #898989;
+    font-weight: 500;
+}
+.inputTitle:focus{
+    background-color: #fff;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+}
+.inputTitle:focus::placeholder{
+    color: transparent;
+}
+
+
+
+/* =========== Tags ====================================================== */
+.tagsContainer{
+    width: 100%;
+    padding: 5px;
+    /* border: 1px solid orange; */
+    box-sizing: border-box;
+}
+.tagsTitleContainer{
+    width: 100%;
+}
+.tagsInputContainer{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+#tags{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+.tag{
+    background-color: green;
+    color: white;
+    border-radius: 8px;
+    padding: 5px 10px 5px 10px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    font-size: 18px;
+    
+}
+.tag:hover{
+    cursor: pointer;
+    background-color: rgb(0, 101, 0);
+}
+#tagInput{
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 5px 5px 5px 10px;
+    margin-bottom: 5px;
+    font-size: 18px;
+    background-color: rgb(185, 185, 185);
+    border-radius: 8px;
+}
+#tagInput::placeholder{
+    color: #898989;
+    font-weight: 500;
+}
+#tagInput:focus{
+    background-color: #fff;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+}
+#tagInput:focus::placeholder{
+    color: transparent;
+}
+
+
+
+.textAreaContainer{
+    width: 100%;
+    flex: 1;
+}
+
+
+
+.showFlex{
+    display: flex;
+}
+.hide{
+    display: none;
+}
