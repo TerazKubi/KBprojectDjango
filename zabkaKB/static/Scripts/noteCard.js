@@ -37,11 +37,11 @@ function showNoteCardFS(noteData){
         
     })
 
-    const buttons = ['close']
+    const buttons = [editButton, removeButton]
     const navBar = createFullscreenNavbar(buttons)
-    const FsContainer = createFullscreenContainer(navBar, noteCard)
+    const FsContainer = createFullscreenContainer(noteCard)
 
-    
+    FsContainer.insertBefore(navBar, FsContainer.firstChild)
 
     
 

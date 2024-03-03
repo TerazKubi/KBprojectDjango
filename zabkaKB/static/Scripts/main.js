@@ -7,37 +7,12 @@ const newNoteContainer = document.querySelector(".blackBg")
 
 const searchInput = document.querySelector('#navBar-searchInput')
 
+// https://sweetalert2.github.io/#configuration
 
 window.onload = async ()=>{
-    
-    // const data = await fetchData()
-    // data = await getDataFromStorageAsync()
 
     const data = await getNotes()
-
     displayData(data?.notes, reversed=true)
-
-    // await addNoteToDB(JSON.stringify(data[0]))
-
-
-
-
-    
-
-    // Swal.fire({
-    //     title: "Good job!",
-    //     text: "You clicked the button!",
-    //     icon: "success",
-    //     confirmButtonColor: 'green'
-    // });
-    // Swal.fire({
-    //     title: 'Error!',
-    //     text: 'Do you want to continue',
-    //     icon: 'error',
-    //     confirmButtonText: 'Cool'
-    // })
-
-    // https://sweetalert2.github.io/#configuration
 
 }
 
@@ -46,10 +21,8 @@ addNoteButton.addEventListener('click', async () => {
     await initTextAreaAsync()
 })
 
+
 searchInput.addEventListener('input', handleSearch)
-
-
-
 
 async function handleSearch() {
     const searchTerm = searchInput.value.toLowerCase();
@@ -58,9 +31,6 @@ async function handleSearch() {
     // console.log(data.notes)
     displayData(data.notes, reversed = true)
 }
-
-
-
 
 
 function displayData(data, reversed = false) {

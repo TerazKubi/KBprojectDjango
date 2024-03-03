@@ -1,46 +1,28 @@
 function showAddNewNoteAsync(note = null){
     return new Promise((resolve, reject) => {
-        const FScontainer = createElement('div', ['fullscreen-container'])
-    
-        const navBar = createElement('div', ['fullscreen-navbar'])
-
-        const closeFullscreen = createElement('div', ['fullscreen-navbar-close-button'])
-        closeFullscreen.innerHTML = '<img src="/static/Icons/close.svg" alt="expand"/>'
-        closeFullscreen.addEventListener('click', () => {
-            destroyTextArea()
-            FScontainer.remove()
-        })
 
         const saveButton = createElement('div', ['fullscreen-navbar-save-button'])
         saveButton.innerHTML = '<img src="/static/Icons/save.svg" alt="expand"/>'
         saveButton.addEventListener('click', async () => {
             const res = await saveNoteHandler(note)
-            console.log(res)
             if(!res) return
 
             const data = await getNotes()
 
             displayData(data?.notes, reversed=true)
-            
 
             destroyTextArea()
-            FScontainer.remove()
+            FsContainer.remove()
         })
         
-        navBar.appendChild(saveButton)
-        navBar.appendChild(closeFullscreen)
-
         const contentContainer = createElement('div', ['fullscreen-content-container'])
-
         const editorContainer = createElement('div', ['editor-container'])
 
         const titleContainer = initTitleContainer(note?.title)
         const tagsContainer = initTagsContainer(note?.tags)
         
-
-        const textAreaContainer = document.createElement('div')
-        textAreaContainer.classList.add('textAreaContainer')
-
+        const textAreaContainer = createElement('div', ['textAreaContainer'])
+        
         const textArea = document.createElement('textarea')
         textArea.setAttribute('id', 'textArea')
 
@@ -52,12 +34,15 @@ function showAddNewNoteAsync(note = null){
 
         contentContainer.appendChild(editorContainer)
         
-        FScontainer.appendChild(navBar)
-        FScontainer.appendChild(contentContainer)
+        
+        const buttons = [saveButton]
+        const navBar = createFullscreenNavbar(buttons)
+        const FsContainer = createFullscreenContainer(contentContainer)
 
-        document.body.appendChild(FScontainer)
+        FsContainer.insertBefore(navBar, FsContainer.firstChild)
 
-
+        
+        document.body.appendChild(FsContainer)
         resolve()
     })
     
