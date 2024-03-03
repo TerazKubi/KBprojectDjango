@@ -6,7 +6,7 @@
 function showNoteCardFS(noteData){
     const noteCard = createNoteCard(noteData, fullscreen=true)
 
-    const editButton = createElement('div', ['fullscreen-navbar-close-button'])
+    const editButton = createElement('div', ['fullscreen-navbar-button'])
     editButton.innerHTML = '<img src="/static/Icons/edit.svg" alt="expand"/>'
     editButton.addEventListener('click', async () => {
         FsContainer.remove()
@@ -14,7 +14,7 @@ function showNoteCardFS(noteData){
         await initTextAreaAsync(noteData.text)
         
     })
-    const removeButton = createElement('div', ['fullscreen-navbar-delete-button'])
+    const removeButton = createElement('div', ['fullscreen-navbar-button'])
     removeButton.innerHTML = '<img src="/static/Icons/deleteB.svg" alt="expand"/>'
     removeButton.addEventListener('click', async ()=> {
         Swal.fire({

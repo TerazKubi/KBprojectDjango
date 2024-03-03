@@ -1,7 +1,7 @@
 function showAddNewNoteAsync(note = null){
     return new Promise((resolve, reject) => {
 
-        const saveButton = createElement('div', ['fullscreen-navbar-save-button'])
+        const saveButton = createElement('div', ['fullscreen-navbar-button'])
         saveButton.innerHTML = '<img src="/static/Icons/save.svg" alt="expand"/>'
         saveButton.addEventListener('click', async () => {
             const res = await saveNoteHandler(note)

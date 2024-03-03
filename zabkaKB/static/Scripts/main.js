@@ -2,7 +2,7 @@ const mainContainer = document.querySelector(".main-container")
 
 const textArea = document.querySelector("#default")
 
-const addNoteButton = document.querySelector("#navBar-addButton")
+const addNoteButton = document.querySelector(".navBar-addButton")
 const newNoteContainer = document.querySelector(".blackBg")
 
 const searchInput = document.querySelector('#navBar-searchInput')

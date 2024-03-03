@@ -27,32 +27,35 @@
     justify-content: center;
     align-items: center;
 }
-.fullscreen-navbar div:hover{
-    cursor: pointer;
-    background-color: rgb(33, 33, 33);
+
+
+.fullscreen-navbar-buttons-container{
+    margin: 0 auto;
+    height: inherit;
 }
 
-.fullscreen-navbar-save-button{
-    margin: 0 auto;
+.fullscreen-navbar-button{
+    height: 50px;
     width: 50px;
-    height: inherit;
     border-left: 1px solid rgba(255, 255, 255, 0.39);
     border-right: 1px solid rgba(255, 255, 255, 0.39);
 }
-
+.fullscreen-navbar-button:hover{
+    background-color: rgb(33, 33, 33);
+    cursor: pointer;
+}
 
 .fullscreen-navbar-close-button{
     width: 50px;
     height: inherit;
     border-left: 1px solid rgba(255, 255, 255, 0.39);
 }
-
-
-.fullscreen-navbar-delete-button{
-    width: 50px;
-    height: inherit;
-    border-left: 1px solid rgba(255, 255, 255, 0.39);
+.fullscreen-navbar-close-button:hover{
+    background-color: rgb(33, 33, 33);
+    cursor: pointer;
 }
+
+
 
 
 /* ================== FS content container ======================================================= */

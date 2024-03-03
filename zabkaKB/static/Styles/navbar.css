@@ -11,16 +11,24 @@
 
 .navBar-buttonsContainer{
     display: flex;
+    height: 100%;
     gap: 10px;
 }
-#navBar-downloadButton{
-    
-}
 
-#navBar-addButton{
-    
-}
+.navBar-addButton{
+    width: 50px;
+    height: 100%;
+    background-color: green;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
+    border-left: 1px solid rgba(255, 255, 255, 0.365);
+}
+.navBar-addButton:hover{
+    background-color: rgba(255, 255, 255, 0.287);
+    cursor: pointer;
+}
 
 .navbar-inputContainer{
     justify-self: center;
