@@ -49,14 +49,19 @@
 
     <script src="{% static 'Scripts/api/api.js' %}"></script>
 
+    <script src="{% static 'Scripts/handlers/displayNoteFullscreen.js' %}"></script>
+    <script src="{% static 'Scripts/handlers/displayNoteEditor.js' %}"></script>
+    <script src="{% static 'Scripts/handlers/eventHandlers.js' %}"></script>
+
     <script src="{% static 'Scripts/ui/createNoteCard.js' %}"></script>
     <script src="{% static 'Scripts/ui/createFullscreenContainer.js' %}"></script>
     <script src="{% static 'Scripts/ui/createFullscreenNavBar.js' %}"></script>
+    <script src="{% static 'Scripts/ui/createNoteEditor.js' %}"></script>
 
-    <script src="{% static 'Scripts/utils.js' %}" ></script>
+    <script src="{% static 'Scripts/utils/helperFunctions.js' %}"></script>
+    <script src="{% static 'Scripts/utils/validationFunctions.js' %}"></script>
+
     <script src="{% static 'Scripts/textEditor.js' %}" ></script>
-    <script src="{% static 'Scripts/noteEditor.js' %}" ></script>
-    <script src="{% static 'Scripts/noteCard.js' %}" ></script>
     <script src="{% static 'Scripts/main.js' %}" ></script>
 </body>
 </html>

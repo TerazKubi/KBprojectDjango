@@ -1,11 +1,11 @@
-function createNoteCard(cardObject, fullscreen=false){
+function createNoteCard(noteObject, fullscreen=false){
     const noteCard = createElement('div', fullscreen? ['note-container-FS'] : ['note-container'])
-    noteCard.setAttribute('id', cardObject.id)
+    noteCard.setAttribute('id', noteObject?.id)
 
     const noteHeader = createElement('div', ['note-header-container'])
 
     const noteHeaderTags = createElement('div', ['note-tags'])
-    cardObject?.tags.forEach(tag => {
+    noteObject?.tags.forEach(tag => {
         const tagContainer = createElement('div', ['note-tag'])
         tagContainer.innerText = tag
 
@@ -24,7 +24,7 @@ function createNoteCard(cardObject, fullscreen=false){
         const expandButton = createElement('div', ['note-btn', 'expand'])
         expandButton.innerHTML = `<img src="/static/Icons/expandB.svg" alt="expand"/>`
         expandButton.addEventListener('click', () => {
-            showNoteCardFS(cardObject)
+            displayNoteFullscreen(noteObject)
         })
         noteHeaderButtons.appendChild(expandButton)
         noteHeader.appendChild(noteHeaderButtons)  
@@ -32,11 +32,11 @@ function createNoteCard(cardObject, fullscreen=false){
     
     const noteTitle = createElement('div', ['note-titleContainer'])
     const title = createElement('span', ['note-title'])
-    title.innerText = cardObject?.title || ""
+    title.innerText = noteObject?.title || ""
     noteTitle.appendChild(title)
 
     const noteBody = createElement('div', fullscreen? ['note-bodyContainer-FS'] : ['note-bodyContainer'])
-    noteBody.innerHTML = cardObject?.text || ""
+    noteBody.innerHTML = noteObject?.text || ""
 
     noteCard.appendChild(noteHeader)
     noteCard.appendChild(noteTitle)
@@ -46,9 +46,3 @@ function createNoteCard(cardObject, fullscreen=false){
 }
 
 
-async function tagEventHandler(tag){
-    searchInput.focus()
-    searchInput.value = tag
-    const inputEvent = new Event('input')
-    searchInput.dispatchEvent(inputEvent)
-}

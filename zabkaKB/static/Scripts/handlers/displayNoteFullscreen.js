@@ -1,19 +1,15 @@
-
-
-
-
-
-function showNoteCardFS(noteData){
-    const noteCard = createNoteCard(noteData, fullscreen=true)
+function displayNoteFullscreen(noteObject){
+    const noteCard = createNoteCard(noteObject, fullscreen=true)
 
     const editButton = createElement('div', ['fullscreen-navbar-button'])
     editButton.innerHTML = '<img src="/static/Icons/edit.svg" alt="expand"/>'
     editButton.addEventListener('click', async () => {
         FsContainer.remove()
-        await showAddNewNoteAsync(noteData)
-        await initTextAreaAsync(noteData.text)
+        await displayNoteEditor(noteObject)
+        await initTextAreaAsync(noteObject.text)
         
     })
+
     const removeButton = createElement('div', ['fullscreen-navbar-button'])
     removeButton.innerHTML = '<img src="/static/Icons/deleteB.svg" alt="expand"/>'
     removeButton.addEventListener('click', async ()=> {
@@ -26,8 +22,8 @@ function showNoteCardFS(noteData){
             denyButtonColor: 'gray'
         }).then((result) => {
             if (result.isConfirmed) {
-                deleteNote(noteData.id)
-                document.getElementById(noteData.id).remove()
+                deleteNote(noteObject.id)
+                document.getElementById(noteObject.id).remove()
                 FsContainer.remove()
                 Swal.fire("Usunięto 😒", "", "success")
             } else if (result.isDenied) {             
@@ -42,8 +38,6 @@ function showNoteCardFS(noteData){
     const FsContainer = createFullscreenContainer(noteCard)
 
     FsContainer.insertBefore(navBar, FsContainer.firstChild)
-
-    
 
     document.body.appendChild(FsContainer)
 }
