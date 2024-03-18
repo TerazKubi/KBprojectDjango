@@ -19,12 +19,7 @@ async function saveNoteHandler(note){
         console.log('saved')
     } 
 
-    Swal.fire({
-        icon: "success",
-        title: note? "Udało sie edytować 👌" : "Super! Notatka dodana 👍",
-        showConfirmButton: false,
-        timer: 1600
-    })
+    showSuccess(note? "Udało sie edytować 👌" : "Super! Notatka dodana 👍")
     
     return true
 }

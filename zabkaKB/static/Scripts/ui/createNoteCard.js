@@ -29,6 +29,10 @@ function createNoteCard(noteObject, fullscreen=false){
         noteHeaderButtons.appendChild(expandButton)
         noteHeader.appendChild(noteHeaderButtons)  
     }
+
+    
+
+
     
     const noteTitle = createElement('div', ['note-titleContainer'])
     const title = createElement('span', ['note-title'])
@@ -37,6 +41,18 @@ function createNoteCard(noteObject, fullscreen=false){
 
     const noteBody = createElement('div', fullscreen? ['note-bodyContainer-FS'] : ['note-bodyContainer'])
     noteBody.innerHTML = noteObject?.text || ""
+
+
+    if(fullscreen){
+        const images = noteBody.getElementsByTagName("img");
+        const imagesArray = [...images];
+        console.log(images)
+        imagesArray.forEach(image => {
+            image.addEventListener("click", () => {
+                console.log(image)
+            })
+        })
+    }
 
     noteCard.appendChild(noteHeader)
     noteCard.appendChild(noteTitle)

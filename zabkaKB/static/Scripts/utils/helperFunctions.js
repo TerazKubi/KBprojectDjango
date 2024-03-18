@@ -68,6 +68,23 @@ function createButton(text, classNames, clickHandler) {
 }
 
 
+function showError(errorText, errorTitle){
+    Swal.fire({
+        title: errorTitle,
+        text: errorText,
+        icon: 'error',
+        confirmButtonColor: 'green',
+        confirmButtonText: 'Ok'
+    })
+}
 
+function showSuccess(title){
+    Swal.fire({
+        icon: "success",
+        title: title,
+        showConfirmButton: false,
+        timer: 1600
+    })
+}
 
 
