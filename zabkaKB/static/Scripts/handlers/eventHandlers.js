@@ -40,3 +40,5 @@ async function handleSearchEvent() {
     // console.log(data.notes)
     displayData(data.notes, reversed = true)
 }
+
+

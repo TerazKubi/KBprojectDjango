@@ -101,6 +101,17 @@
     flex: 1;
     overflow-wrap: break-word;
     overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.note-fullscreen-image{
+    box-sizing: border-box;
+    border: 1px solid white;
+}
+
+.note-fullscreen-image:hover{
+    cursor: pointer;
+    border: 1px solid green;
 }
 
 /* width */

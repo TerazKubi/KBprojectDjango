@@ -47,9 +47,13 @@ function createNoteCard(noteObject, fullscreen=false){
         const images = noteBody.getElementsByTagName("img");
         const imagesArray = [...images];
         console.log(images)
-        imagesArray.forEach(image => {
+        imagesArray.forEach((image, index) => {
+
+            image.classList.add('note-fullscreen-image')
+
             image.addEventListener("click", () => {
                 console.log(image)
+                displayImageGalery(index, imagesArray)
             })
         })
     }
