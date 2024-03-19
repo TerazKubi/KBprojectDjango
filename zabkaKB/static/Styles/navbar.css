@@ -58,6 +58,16 @@
     width: 33%;
     height: 100%;
 }
+
+.titleContainer{
+    font: 20px;
+    font-weight: 600;
+    color: white;
+}
+.titleContainer:hover{
+    cursor: pointer;
+}
+
 .flexCenter{
     display: flex;
     align-items: center;
